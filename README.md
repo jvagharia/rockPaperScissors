@@ -6,7 +6,7 @@ Simple Angular Rock, Paper, Scissors game
 Please make sure you have node.js installed.
 
 ```sh
-$ git clone [git-repo-url]
+$ git clone https://github.com/jvagharia/rockPaperScissors.git
 ```
 
 Open index.html in /app folder to run the app.
