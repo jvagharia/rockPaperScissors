@@ -1,0 +1,112 @@
+body{
+	background-color:#3E4651;
+	color:white;
+}
+
+.wrapper{
+    overflow-x: hidden;
+}
+
+.title{
+	background-color:#3498db;
+	padding:20px;
+}
+
+.gamemode{
+	padding-top:10px;
+	padding-bottom:35px;
+}
+
+
+.modelist label{
+   padding-right:20px;
+}
+
+.modelist input[type="radio"]:checked + label {
+    background:yellow;
+}
+
+input {
+    visibility:hidden;
+}
+input:checked {
+    background: red;
+}
+
+.scoreboard{
+	background-color:#808080;
+}
+
+.scoreboard > div {
+	text-align:center;
+}
+
+.scores > div {
+    padding:10px;
+    font-size: 45px;
+}
+
+.scores .scoreLabel{
+	font-size:15px;
+}
+
+.scoreMessage{
+	font-size: 45px;
+}
+
+.gamewrap > div {
+	padding:15px 10px;
+	height:500px;
+}
+
+.playerone {
+	background-color: #00B5B5;
+	height:100%;
+	position:relative;
+}
+
+.holder{
+	position:absolute;
+	bottom:0px;
+	padding:20px;
+	margin: auto;
+	left: 0px;
+	right: 0px;
+	width:350px;
+}
+
+
+.choices > button{
+	width:100px;
+	height:40px;
+	font-size:20px;
+	border-color: white;	
+}
+
+.player_image{
+	text-align: center;
+}
+
+.player_image img{
+	padding:70px 50px;
+	width:300px;
+	height:auto;
+}
+
+.playertwo {
+	background-color:#F1654C;
+}
+
+.playerOneWins{
+    background-color: #00B5B5;
+}
+
+.playerTwoWins{
+    background-color: #F1654C;
+}
+
+.typeOfGame{
+    padding:20px;
+    font-size:25px;
+}
+

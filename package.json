@@ -1,0 +1,17 @@
+{
+  "name": "rps",
+  "version": "1.0.0",
+  "description": "Play RPC!",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-mocks": "^1.4.8",
+    "jasmine-core": "^2.4.1",
+    "karma-jasmine": "^0.3.6"
+  },
+  "devDependencies": {
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6"
+  },
+  "author": "Jay Vagharia",
+  "license": "ISC"
+}

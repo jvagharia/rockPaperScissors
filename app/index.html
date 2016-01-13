@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Rock Paper Scissors</title>
+
+    <script src="js/jquery-2.1.3.min"></script>    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Angular.JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-mocks.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/game.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+      
+  </head>
+  <body ng-app="RPS" ng-controller="gameplay">
+    <div class="wrapper">
+      <div class="row">
+        <div class="col-md-12 col-ld-12 title"><center><h1>Rock, Paper, Scissors</h1></center></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 gamemode">
+          <h3><center>Game Mode</center></h3>
+          <div style="text-align:center">
+            <div class="modelist">
+                <label class="btn btn-default">
+                  <input type="radio" name="options" ng-change="changeModes('PlayerVsComputer')" value="PlayerVsComputer" ng-model="mode"> Player vs Computer
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" name="options" ng-change="changeModes('ComputerVsComputer')"  value="ComputerVsComputer" ng-model="mode"> Computer vs Computer
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" name="options" ng-change="changeModes('Random')" ng-click="changeModes('Random')" value="Random" ng-model="mode"> Random
+                </label>
+            </div>
+              <p> Please Note: When changing game mode, all scores will reset</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="gamewrap" >
+          <!-- Player -->
+          <div class="col-md-4 col-ld-4 playerone">
+            <div class="sectitle "><h2><center>{{player_one.name}}</center></h2></div>
+            <!--  Image --> 
+            <div class="player_image">
+              <img ng-src="{{getOptionImage('PlayerOne')}}">
+            </div>
+            <!-- Choice buttons -->
+            <div class="holder">
+                <p><center>You have chosen: <b>{{getOption("PlayerOne")}}</b> </center></p>
+              <div class="choices pvc">
+                <button type="button" class="btn btn-default" ng-click="selectop(0)">Rock</button>
+                <button type="button" class="btn btn-default" ng-click="selectop(1)">Paper</button> 
+                <button type="button" class="btn btn-default" ng-click="selectop(2)">Scissors</button> 
+              </div>
+            </div>
+          </div>
+          <!-- Scoreboard -->
+          <div class="col-md-4 col-ld-4 scoreboard">
+            <div class="sectitle"><h2><center>Scoreboard</center></h2></div>
+            <div class="row scores">
+              <div class="col-md-4 col-ld-4 playerOneWins">
+                <p class="scoreLabel">WINS</p>
+                {{game.player_one_wins}}
+              </div>
+              <div class="col-md-4 col-ld-4">
+                <p class="scoreLabel">TIES</p>
+                {{game.ties}}
+              </div>
+              <div class="col-md-4 col-ld-4 playerTwoWins">
+                <p class="scoreLabel">WINS</p>
+                {{game.player_two_wins}}
+              </div>
+            </div>
+            <div class="row typeOfGame">
+                You are playing : {{game.game_mode}}
+            </div>
+            <div class="scoreMessage"><p>{{scoreMessage}}</p><p>{{winnerMessage}}</p></div>
+            <div class="holder">
+              <div class="choices cvc">
+                <button type="button" class="btn btn-default" ng-click="playRandom()">Play!</button>
+              </div>
+            </div>
+          </div>
+          <!-- Player 2 -->
+          <div class="col-md-4 col-ld-4 playertwo">
+            <div class="sectitle"><h2><center>{{player_two.name}}</center></h2></div>
+            <!--  Image --> 
+            <div class="player_image">
+              <img ng-src="{{getOptionImage('PlayerTwo')}}">
+            </div>
+            <div class="holder">
+                <p><center>The opponent has chosen: <b>{{getOption("PlayerTwo")}}</b> </center></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
