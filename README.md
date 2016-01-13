@@ -3,7 +3,7 @@ Simple Angular Rock, Paper, Scissors game
 
 ### Installation
 
-Please make sure you have node.js installed.
+Please make sure you have node.js installed and npm install.
 
 ```sh
 $ git clone https://github.com/jvagharia/rockPaperScissors.git
@@ -21,8 +21,15 @@ When playing "Computer Vs Computer", press the "Play!" button in middle of the s
 
 Please note: all scores will be cleared when the game mode is changed.
 
-
 ### Testing
+
+Please make sure you have installed the following packages:
+
+```sh
+$ sudo npm install -g jasmine-core
+$ sudo npm install -g karma-jasmine
+$ sudo npm install -g karma-chrome-launcher
+```
 
 Browse to root directory of rockPaperScissors (Same level as karma.conf.js) and run the following command:
 
