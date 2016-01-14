@@ -3,7 +3,7 @@ Simple Angular Rock, Paper, Scissors game
 
 ### Installation
 
-Please make sure you have node.js installed and npm install.
+Please make sure you have node.js installed and run npm install.
 
 ```sh
 $ git clone https://github.com/jvagharia/rockPaperScissors.git
@@ -29,6 +29,7 @@ Please make sure you have installed the following packages:
 $ sudo npm install -g jasmine-core
 $ sudo npm install -g karma-jasmine
 $ sudo npm install -g karma-chrome-launcher
+$ sudo npm install -g karma-firefox-launcher
 ```
 
 Browse to root directory of rockPaperScissors (Same level as karma.conf.js) and run the following command:
@@ -37,4 +38,4 @@ Browse to root directory of rockPaperScissors (Same level as karma.conf.js) and 
 $ karma start
 ```
 
-This will display all jasmine tests in the /specs folder. These tests look at the checkWinner() function and tests different combination of options.
+This will display all jasmine tests in the /specs folder. These 9 tests look at the checkWinner() function and tests different combination of options. 

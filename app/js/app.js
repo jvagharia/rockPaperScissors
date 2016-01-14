@@ -77,13 +77,15 @@ app.controller("gameplay", ['$scope', '$http' , function ($scope) {
             this.player_one.name = "Player";
             this.player_two.name = "Computer";
             this.game.game_mode =  "Player VS Computer";
+            this.gameInstructions = "Please select a option from the left side of the screen to play.";
         } else if (mode == "ComputerVsComputer"){
             resetMode();
             $(".pvc").hide();
             $(".cvc").show();
             this.player_one.name = "Computer 1";
             this.player_two.name= "Computer 2";
-            this.game.game_mode = "Computer 1 VS Computer 2"
+            this.game.game_mode = "Computer 1 VS Computer 2";
+            this.gameInstructions = "Please press the play button below to play";
         } else  if (mode == "Random") {
 			if (Math.random() < 0.5) {
                 resetMode();
@@ -92,13 +94,15 @@ app.controller("gameplay", ['$scope', '$http' , function ($scope) {
                 this.player_one.name = "Player";
                 this.player_two.name = "Computer";
                 this.game.game_mode =  "Player VS Computer";
+                this.gameInstructions = "Please select a option from the left side of the screen to play.";
 			} else {
                 resetMode();
                 $(".pvc").hide();
                 $(".cvc").show();
                 this.player_one.name = "Computer 1";
                 this.player_two.name= "Computer 2";
-                this.game.game_mode = "Computer 1 VS Computer 2"
+                this.game.game_mode = "Computer 1 VS Computer 2";
+                this.gameInstructions = "Please press the play button below to play";
 			}
 		}
 	};
