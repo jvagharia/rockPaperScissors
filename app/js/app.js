@@ -5,7 +5,6 @@ app.controller("gameplay", ['$scope', '$http' , function ($scope) {
     //Set defaults    
     currentMode = "PlayerVsComputer";
     // Values descending order of winning. Crucial for winning algorithm. Rock < Paper < Scissors < #Rock# 
-    // More values can be added
     $scope.values = ['Rock', 'Paper', 'Scissors'];
      
     $scope.game = {
@@ -114,6 +113,7 @@ app.controller("gameplay", ['$scope', '$http' , function ($scope) {
         if (playerOne == playerTwo) {
 			$scope.game.ties++;
 			$scope.scoreMessage = "It's a Tie!!";
+            $scope.winnerMessage = "";
 		} else if ((playerOne  == (playerTwo - 1)) || ((playerOne == $scope.values.length - 1) && (playerTwo == 0))) {
 			$scope.game.player_two_wins++;
 			$scope.scoreMessage = $scope.values[playerTwo] + " beats " +  $scope.values[playerOne] + "!";
@@ -130,7 +130,7 @@ app.controller("gameplay", ['$scope', '$http' , function ($scope) {
         //
         $scope.player_one.option = option;
         $scope.player_two.option = Math.floor(Math.random() * $scope.values.length);
-        
+    
         $scope.checkWinner($scope.player_one.option, $scope.player_two.option);
 	};
     
